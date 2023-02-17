@@ -13,29 +13,33 @@
 
     <body style="background-color:rgb(33, 33, 110)">
         <h1 style="color:rgb(177, 177, 164)">Shark Tank Deal Predictor</h1>
-        <h3 style="color:rgb(177, 177, 164)">Using the dropdowns, make selections to see if the proposed business is predicted to secure a deal.</h3>
+        <h3 style="color:rgb(177, 177, 164)">Create a team, business and deatils of a pitch to find your chance of securing a deal on Shark Tank.</h3>
         <hr>
-        <h4 style="color:rgb(177, 177, 164)">Gender of Pitch Team:</h4>
-        <select id="dropdown1">
-        </select>
+        <form id="dropdownChoices">
+            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Gender of Pitch Team:</h4>
+            <select id="dropdown1">
+            </select>
 
-        <h4 style="color:rgb(177, 177, 164)">Industry:</h4>
-        <select id="dropdown2">
-        </select>
+            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Industry:</h4>
+            <select id="dropdown2">
+            </select>
 
-        <h4 style="color:rgb(177, 177, 164)">Initial Asking Amount:</h4>
-        <select id="dropdown3">
-        </select>
+            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Asking Amount:</h4>
+            <select id="dropdown3">
+            </select>
 
-        <h4 style="color:rgb(177, 177, 164)">Initial Equity Offered:</h4>
-        <select id="dropdown4">
-        </select>
+            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Equity Offered:</h4>
+            <select id="dropdown4">
+            </select>
 
-        <h4 style="color:rgb(177, 177, 164)">Initial Valuation:</h4>
-        <select id="dropdown5">
-        </select>
+            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Valuation:</h4>
+            <select id="dropdown5">
+            </select>
+            
+            <div style="margin-top: 50px;"></div>
 
-        <hr>
+            <input type="submit" style="margin-bottom: 100px;" onclick="gatherValues()">Predict My Chances!</input>
+        </form>
 
         <h4 style="color:rgb(177, 177, 164)">Prediction here:</h4>
 

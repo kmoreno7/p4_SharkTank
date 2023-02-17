@@ -135,6 +135,27 @@ let data5 = d3.csv('data/sharktank_data.csv').then(function(data5) {
     }
 });
 
+function gatherValues(){
+    console.log('text')
+    let form = document.getElementById("dropdownChoices");
+    console.log(form)
+
+    form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let outputs = document.getElementById('dropdown3').value
+    console.log(outputs)
+})};
+
+
+
+
+
+
+
+
+// var runModel = d3.select('#runPrediction')
+
 // function logistic_prediction(X):
 //     let p = 1 / 1 + 2.71**(-1*(intercept + coef*X[0] + ...)
 //     return 'deal' if p >.5 else 'no deal'
