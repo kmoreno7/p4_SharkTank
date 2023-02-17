@@ -57,14 +57,18 @@ let data3 = d3.csv('data/sharktank_data.csv').then(function(data3) {
     }
     });
     
+    const filteredAskAmountValues = askAmountValues.filter((value) => {
+        return value !== "";
+    });
+
     var optionMenu = d3.select('#dropdown3')
-    for (let i = 0; i < askAmountValues.length; i++) {
+    for (let i = 0; i < filteredAskAmountValues.length; i++) {
         option = document.createElement('option');
-        option.text = askAmountValues[i];
+        option.text = filteredAskAmountValues[i];
         optionMenu.append('option')
-        .attr('value', askAmountValues[i])
-        .text(askAmountValues[i]);
-    }
+        .attr('value', filteredAskAmountValues[i])
+        .text(filteredAskAmountValues[i]);
+    };
 });
 
 let data4 = d3.csv('data/sharktank_data.csv').then(function(data4) {
@@ -85,80 +89,29 @@ let data4 = d3.csv('data/sharktank_data.csv').then(function(data4) {
     }
     });
 
+    const filteredAskEquityValues = askEquityValues.filter((value) => {
+        return value !== "";
+    });
+
     var optionMenu = d3.select('#dropdown4')
-    for (let i = 0; i < askEquityValues.length; i++) {
+    for (let i = 0; i < filteredAskEquityValues.length; i++) {
         option = document.createElement('option');
-        option.text = askEquityValues[i];
+        option.text = filteredAskEquityValues[i];
         optionMenu.append('option')
-        .attr('value', askEquityValues[i])
-        .text(askEquityValues[i]);
+        .attr('value', filteredAskEquityValues[i])
+        .text(filteredAskEquityValues[i]);
     }
 });
 
 let data5 = d3.csv('data/sharktank_data.csv').then(function(data5) {
 
-    let royalty = data5.map(i => i['Royalty Deal?']);
-    let royaltyOption = [...new Set(royalty)];
+    let valuation = data5.map(i => i['ASK_Valuation']);
+    let valuationValues = [...new Set(valuation)];
 
-    var optionMenu = d3.select('#dropdown5')
-    for (let i = 0; i < royaltyOption.length; i++) {
-        option = document.createElement('option');
-        option.text = royaltyOption[i];
-        optionMenu.append('option')
-        .attr('value', royaltyOption[i])
-        .text(royaltyOption[i]);
-    }
-});
-
-let data6 = d3.csv('data/sharktank_data.csv').then(function(data6) {
-
-    let loan = data6.map(i => i['Loan?']);
-    let loanOption = [...new Set(loan)];
-
-    var optionMenu = d3.select('#dropdown6')
-    for (let i = 0; i < loanOption.length; i++) {
-        option = document.createElement('option');
-        option.text = loanOption[i];
-        optionMenu.append('option')
-        .attr('value', loanOption[i])
-        .text(loanOption[i]);
-    }
-});
-
-let data7 = d3.csv('data/sharktank_data.csv').then(function(data7) {
-
-    let sharks = data7.map(i => i['# Sharks']);
-    let sharksAmount = [...new Set(sharks)];
-
-    sharksAmount.sort(function(a, b) {
-        if (a < b) {
-          return -1;
-        }
-        if (a > b) {
-          return 1;
-        }
-        return 0;
-      });
-
-    var optionMenu = d3.select('#dropdown7')
-    for (let i = 0; i < sharksAmount.length; i++) {
-        option = document.createElement('option');
-        option.text = sharksAmount[i];
-        optionMenu.append('option')
-        .attr('value', sharksAmount[i])
-        .text(sharksAmount[i]);
-    }
-});
-
-let data8 = d3.csv('data/sharktank_data.csv').then(function(data8) {
-
-    let sharkDollars = data8.map(i => i['$ per shark']);
-    let perShark = [...new Set(sharkDollars)];
-
-    perShark.sort((e, f) => {
+    valuationValues.sort((e, f) => {
     const eValue = Number(e.replace(/\D/g, ''));
     const fValue = Number(f.replace(/\D/g, ''));
-      
+    
     if (eValue < fValue) {
         return -1;
     } else if (eValue > fValue) {
@@ -168,12 +121,20 @@ let data8 = d3.csv('data/sharktank_data.csv').then(function(data8) {
     }
     });
 
-    var optionMenu = d3.select('#dropdown8')
-    for (let i = 0; i < perShark.length; i++) {
+    const filteredValuationValues = valuationValues.filter((value) => {
+        return value !== "";
+    });
+
+    var optionMenu = d3.select('#dropdown5')
+    for (let i = 0; i < filteredValuationValues.length; i++) {
         option = document.createElement('option');
-        option.text = perShark[i];
+        option.text = filteredValuationValues[i];
         optionMenu.append('option')
-        .attr('value', perShark[i])
-        .text(perShark[i]);
+        .attr('value', filteredValuationValues[i])
+        .text(filteredValuationValues[i]);
     }
 });
+
+// function logistic_prediction(X):
+//     let p = 1 / 1 + 2.71**(-1*(intercept + coef*X[0] + ...)
+//     return 'deal' if p >.5 else 'no deal'
