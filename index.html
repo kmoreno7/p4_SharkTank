@@ -7,7 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Shark Tank Dashboard</title>
         <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script type="text/javascript" src="static/js/logic.js"></script>
         <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
     </head>
 
@@ -41,9 +40,12 @@
             <input type="submit" style="margin-bottom: 100px;" onclick="gatherValues()">Predict My Chances!</input>
         </form>
 
-        <h4 style="color:rgb(177, 177, 164)">Prediction here:</h4>
+        <h4 id="prediction" style="color:rgb(177, 177, 164)">Prediction here:</h4>
 
         <h4 style="color:rgb(177, 177, 164)">Any useful visualizations</h4>
+
+        <script type="text/javascript" src="static/js/model.js"></script>
+        <script type="text/javascript" src="static/js/logic.js"></script>
 
     </body>
 </html>

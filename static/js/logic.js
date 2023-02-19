@@ -135,18 +135,55 @@ let data5 = d3.csv('data/sharktank_data.csv').then(function(data5) {
     }
 });
 
-function gatherValues(){
-    console.log('text')
-    let form = document.getElementById("dropdownChoices");
-    console.log(form)
+// select form 
+let form = document.getElementById("dropdownChoices");
 
-    form.addEventListener("submit", function(event) {
+// add eventlistener that executes when submit button pressed
+form.addEventListener("submit", function(event) {
+    // prevent default behavior of submit - aka stop page from reloading
+    // Ref: https://wesbos.com/javascript/05-events/prevent-default-and-form-events
     event.preventDefault();
 
-    let outputs = document.getElementById('dropdown3').value
-    console.log(outputs)
-})};
+    // executes this code instead of default behavior
+    let outputs = document.getElementById('dropdown3').value;
+    console.log(outputs);
 
+    // insert model parameters into array and pass into function that returns prediction
+    // model_array= [];
+    // predictionOutput = predictProbabilityOfOffer(model_array)
+
+    // place holder until function created and code above is used
+    predictionOutput = 0.84
+
+    // insert prediction into HTML
+    let prediction = document.getElementById('prediction')
+    prediction.innerHTML = `Prediction here: ${predictionOutput}`
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function gatherValues(){
+//     console.log('text')
+//     let form = document.getElementById("dropdownChoices");
+//     console.log(form)
+
+//     form.addEventListener("submit", function(event) {
+//     event.preventDefault();
+
+//     let outputs = document.getElementById('dropdown3').value
+//     console.log(outputs)
+// })};
 
 
 
