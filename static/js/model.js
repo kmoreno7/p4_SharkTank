@@ -1,9 +1,48 @@
 function predictProbabilityOfOffer(dropdownValues) {
     // Make X array from dropdownValues
-    const X = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //  see X_train in Python
-    if (dropdownValues.teamGender === 'Boy') {
-        X[0] = 1;
-    } else if 
+    const X = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //  see X_train in Python
+    
+    X[0] = dropdownValues['Initial Asking Amount']
+    X[1] = dropdownValues['Initial Equity Offered']
+    X[2] = dropdownValues['Initial Valuation']
+    
+    if (dropdownValues.Industry === 'Automotive') {
+        X[3] = 1;
+    } else if (dropdownValues.Industry === 'Business Services') {
+        X[4] = 1;
+    } else if (dropdownValues.Industry === 'Children / Education') {
+        X[5] = 1;
+    } else if (dropdownValues.Industry === 'Fashion / Beauty') {
+        X[6] = 1;
+    } else if (dropdownValues.Industry === 'Fitness / Sports / Outdoors') {
+        X[7] = 1;
+    } else if (dropdownValues.Industry === 'Food and Beverage') {
+        X[8] = 1;
+    } else if (dropdownValues.Industry === 'Green/CleanTech') {
+        X[9] = 1;
+    } else if (dropdownValues.Industry === 'Health / Wellness') {
+        X[10] = 1;
+    } else if (dropdownValues.Industry === 'Lifestyle / Home') {
+        X[11] = 1;
+    } else if (dropdownValues.Industry === 'Media / Entertainment') {
+        X[12] = 1;
+    } else if (dropdownValues.Industry === 'Pet Products') {
+        X[13] = 1;
+    } else if (dropdownValues.Industry === 'Software / Tech') {
+        X[14] = 1;
+    } else if (dropdownValues.Industry === 'Travel') {
+        X[15] = 1;
+    } else if (dropdownValues.Industry === 'Uncertain / Other') {
+        X[16] = 1;
+    }
+
+    if (dropdownValues.gender === 'Female') {
+        X[17] = 1;
+    } else if (dropdownValues.gender === 'Male') {
+        X[18] = 1;
+    } else if (dropdownValues.gender === "Mixed Team")
+        X[19] = 1;
+    }
   
     // Scale X array with the same StandardScalar fitted .mean_ & sqrt(.var_) values
     const scaledX = [];
@@ -13,35 +52,27 @@ function predictProbabilityOfOffer(dropdownValues) {
     }
   
     // Calculate predicted probability of offer using logistic regression model
-    const b0 = 2.08186377; // intercept coefficient
-    const b1 = -0.12332179; // coefficient for first feature
-    const b2 = -0.05705083; // coefficients for b2-b28
-    const b3 = -0.10227162;
-    const b4 = 1.45787102;
-    const b5 = 2.51812118;
-    const b6 = 2.20683939;
-    const b7 = 1.76619086;
-    const b8 = 1.69488506;
-    const b9 = 1.86065528;
-    const b10 = 1.08895858;
-    const b11 = 1.30553467;
-    const b12 = 0.20444403;
-    const b13 = 0.0766768;
-    const b14 = 0.15351856;
-    const b15 = -0.34088604;
-    const b16 = -0.3367533;
-    const b17 = 0.18266493;
-    const b18 = 0.07718583;
-    const b19 = 0.26271284;
-    const b20 = 0.02146857;
-    const b21 = 0.01403449;
-    const b22 = 0.19208892;
-    const b23 = -0.05803648;
-    const b24 = -0.10044296;
-    const b25 = -0.06801242;
-    const b26 = -0.06915345;
-    const b27 = -0.18364362;
-    const b28 = 0.31559769;
+    const b0 = 0.3326039; // intercept coefficient
+    const b1 = -0.07630718; // coefficient for first feature
+    const b2 = -0.35676028; // coefficients for b2-b19
+    const b3 = -0.12421937;
+    const b4 = 0.41684977;
+    const b5 = 0.03185517;
+    const b6 = 0.03955223;
+    const b7 = -0.26187454;
+    const b8 = 0.02489356;
+    const b9 = 0.03446122;
+    const b10 = 0.11974947;
+    const b11 = 0.02437165;
+    const b12 = 0.08312125;
+    const b13 = 0.10935225;
+    const b14 = 0.02253039;
+    const b15 = -0.05124994;
+    const b16 = -0.17549381;
+    const b17 = -0.14936309;
+    const b18 = 0.09520573;
+    const b19 = -0.08826022;
+    const b20 = 0.00900906;
 
     // ...
     const linearPredictor = b0 + b1 * scaledX[0] + b2 * scaledX[1] + b3 * scaledX[2];
@@ -49,7 +80,6 @@ function predictProbabilityOfOffer(dropdownValues) {
   
     // Return predicted probability of offer
     return p;
-  }
 
 let prediction = document.getElementById('prediction')
 prediction.innerHTML = `Prediction here: ${predictionOutput}`
