@@ -145,12 +145,26 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // executes this code instead of default behavior
-    let outputs = document.getElementById('dropdown3').value;
+    outputs = []
+    let output1 = document.getElementById('dropdown1').value;
+    outputs.push(output1);
+    let output2 = document.getElementById('dropdown2').value;
+    outputs.push(output2);    
+    let output3 = document.getElementById('dropdown3').value;
+    output3 = Number(output3.replace(/[$,]/g, ""));
+    outputs.push(output3);
+    let output4 = document.getElementById('dropdown4').value;
+    output4 = parseInt(output4).toFixed(3) / 100; // can't get the values to show three decimals in the console
+    outputs.push(output4);
+    let output5 = document.getElementById('dropdown5').value;
+    output5 = Number(output5.replace(/[$,]/g, ""));
+    outputs.push(output5);
+
     console.log(outputs);
 
     // insert model parameters into array and pass into function that returns prediction
     // model_array= [];
-    // predictionOutput = predictProbabilityOfOffer(model_array)
+    // predictionOutput = predictProbabilityOfOffer(outputs) // trying to get the function to run
 
     // place holder until function created and code above is used
     predictionOutput = 0.84

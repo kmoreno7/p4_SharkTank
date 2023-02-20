@@ -1,47 +1,51 @@
-function predictProbabilityOfOffer(dropdownValues) {
-    X[0] = dropdownValues['Initial Asking Amount'];
-    X[1] = dropdownValues['Initial Equity Offered'];
-    X[2] = dropdownValues['Initial Valuation'];
+function predictProbabilityOfOffer() {
+    const outputs = logic.outputs; // need help referencing logic.js in order to pull outputs array
+
+    console.log(outputs);
+
+    x0 = outputs[2];
+    x1 = outputs[3];
+    x2 = outputs[4];
     
-    if (dropdownValues.Industry === 'Automotive') {
-      X[3] = 1;
-    } else if (dropdownValues.Industry === 'Business Services') {
-      X[4] = 1;
-    } else if (dropdownValues.Industry === 'Children / Education') {
-      X[5] = 1;
-    } else if (dropdownValues.Industry === 'Fashion / Beauty') {
-      X[6] = 1;
-    } else if (dropdownValues.Industry === 'Fitness / Sports / Outdoors') {
-      X[7] = 1;
-    } else if (dropdownValues.Industry === 'Food and Beverage') {
-      X[8] = 1;
-    } else if (dropdownValues.Industry === 'Green/CleanTech') {
-      X[9] = 1;
-    } else if (dropdownValues.Industry === 'Health / Wellness') {
-      X[10] = 1;
-    } else if (dropdownValues.Industry === 'Lifestyle / Home') {
-      X[11] = 1;
-    } else if (dropdownValues.Industry === 'Media / Entertainment') {
-      X[12] = 1;
-    } else if (dropdownValues.Industry === 'Pet Products') {
-      X[13] = 1;
-    } else if (dropdownValues.Industry === 'Software / Tech') {
-      X[14] = 1;
-    } else if (dropdownValues.Industry === 'Travel') {
-      X[15] = 1;
-    } else if (dropdownValues.Industry === 'Uncertain / Other') {
-      X[16] = 1;
+    if (outputs[1] === 'Automotive') {
+      x3 = 1;
+    } else if (outputs[1] === 'Business Services') {
+      x4 = 1;
+    } else if (outputs[1] === 'Children / Education') {
+      x5 = 1;
+    } else if (outputs[1] === 'Fashion / Beauty') {
+      x6 = 1;
+    } else if (outputs[1] === 'Fitness / Sports / Outdoors') {
+      x7 = 1;
+    } else if (outputs[1] === 'Food and Beverage') {
+      x8 = 1;
+    } else if (outputs[1] === 'Green/CleanTech') {
+      x9 = 1;
+    } else if (outputs[1] === 'Health / Wellness') {
+      x10 = 1;
+    } else if (outputs[1] === 'Lifestyle / Home') {
+      x11 = 1;
+    } else if (outputs[1] === 'Media / Entertainment') {
+      x12 = 1;
+    } else if (outputs[1] === 'Pet Products') {
+      x13 = 1;
+    } else if (outputs[1] === 'Software / Tech') {
+      x14 = 1;
+    } else if (outputs[1] === 'Travel') {
+      x15 = 1;
+    } else if (outputs[1] === 'Uncertain / Other') {
+      x16 = 1;
     }
 
-    if (dropdownValues.gender === 'Female') {
-      X[17] = 1;
-    } else if (dropdownValues.gender === 'Male') {
-      X[18] = 1;
-    } else if (dropdownValues.gender === "Mixed Team")
-      X[19] = 1;
+    if (outputs[0] === 'Female') {
+      x17 = 1;
+    } else if (outputs[0] === 'Male') {
+      x18 = 1;
+    } else if (outputs[0] === "Mixed Team")
+      x19 = 1;
     };
 
-    const inputs = [X[0], X[1], X[2], X[3], X[4], X[5], X[6], X[7], X[8], X[9], X[10], X[11], X[12], X[13], X[14], X[15], X[16], X[17], X[18], X[19], X[20]];
+    const inputs = [x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19];
     const meanValues = [288964.211, 13.2273684, 3409019.26, 0.00842105263, 0.00631578947, 0.113684211, 0.155789474, 0.105263158, 0.183157895, 0.0105263158,
     0.0421052632, 0.187368421, 0.0210526316, 0.0610526316, 0.080, 0.0105263158, 0.0147368421, 0.225263158, 0.604210526, 0.170526316]
     const varianceValues = [109772767000, 52.2725141, 21608963400000, 0.00835013850, 0.00627590028, 0.100760111, 0.131519114, 0.0941828255, 0.149611080, 
@@ -86,7 +90,7 @@ function predictProbabilityOfOffer(dropdownValues) {
     const p = 1 / (1 + Math.exp(-linearPredictor));
   
     // Return predicted probability of offer
-    return p;
+    // return p;
 
-let prediction = document.getElementById('prediction')
-prediction.innerHTML = `Prediction here: ${predictionOutput}`
+// let prediction = document.getElementById('prediction')
+// prediction.innerHTML = `Prediction here: ${predictionOutput}`
