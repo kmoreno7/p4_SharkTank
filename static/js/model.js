@@ -1,12 +1,7 @@
 function predictProbabilityOfOffer(dropdownValues) {
-    // Make X array from dropdownValues
-    let X = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //  see X_train in Python
-    
-    console.log(list);
-
-    X[0] = dropdownValues['Initial Asking Amount']
-    X[1] = dropdownValues['Initial Equity Offered']
-    X[2] = dropdownValues['Initial Valuation']
+    X[0] = dropdownValues['Initial Asking Amount'];
+    X[1] = dropdownValues['Initial Equity Offered'];
+    X[2] = dropdownValues['Initial Valuation'];
     
     if (dropdownValues.Industry === 'Automotive') {
       X[3] = 1;
@@ -46,12 +41,16 @@ function predictProbabilityOfOffer(dropdownValues) {
       X[19] = 1;
     };
 
-
+    const inputs = [X[0], X[1], X[2], X[3], X[4], X[5], X[6], X[7], X[8], X[9], X[10], X[11], X[12], X[13], X[14], X[15], X[16], X[17], X[18], X[19], X[20]];
+    const meanValues = [288964.211, 13.2273684, 3409019.26, 0.00842105263, 0.00631578947, 0.113684211, 0.155789474, 0.105263158, 0.183157895, 0.0105263158,
+    0.0421052632, 0.187368421, 0.0210526316, 0.0610526316, 0.080, 0.0105263158, 0.0147368421, 0.225263158, 0.604210526, 0.170526316]
+    const varianceValues = [109772767000, 52.2725141, 21608963400000, 0.00835013850, 0.00627590028, 0.100760111, 0.131519114, 0.0941828255, 0.149611080, 
+    0.0104155125, 0.0403324100, 0.152261496, 0.0206094183, 0.0573252078, 0.07360, 0.0104155125, 0.0145196676, 0.174519668, 0.239140166, 0.141447091]
 
     // Scale X array with the same StandardScalar fitted .mean_ & sqrt(.var_) values
     const scaledX = [];
-    for (let i = 0; i < X.length; i++) {
-      const scaledValue = (X[i] - meanValues[i]) / Math.sqrt(varianceValues[i]);
+    for (let i = 0; i < inputs.length; i++) {
+      const scaledValue = (inputs[i] - meanValues[i]) / Math.sqrt(varianceValues[i]);
       scaledX.push(scaledValue);
     };
   
@@ -79,10 +78,10 @@ function predictProbabilityOfOffer(dropdownValues) {
     const b20 = 0.00900906;
 
     // ...
-    const linearPredictor = b0 + b1 * scaledX[0] + b2 * scaledX[1] + b3 * scaledX[2] + b4 * scaledX[0] + b5 * scaledX[1]
-    + b6 * scaledX[2] + b7 * scaledX[0] + b8 * scaledX[1] + b9 * scaledX[2] + b10 * scaledX[0] + b11 * scaledX[1]
-    + b12 * scaledX[2] + b13 * scaledX[0] + b14 * scaledX[1] + b15 * scaledX[2] + b16 * scaledX[0] + b17 * scaledX[1]
-    + b18 * scaledX[2] + b19 * scaledX[1] + b20 * scaledX[2];
+    const linearPredictor = b0 + b1 * scaledX[0] + b2 * scaledX[1] + b3 * scaledX[2] + b4 * scaledX[3] + b5 * scaledX[4]
+    + b6 * scaledX[5] + b7 * scaledX[6] + b8 * scaledX[7] + b9 * scaledX[8] + b10 * scaledX[9] + b11 * scaledX[10]
+    + b12 * scaledX[11] + b13 * scaledX[12] + b14 * scaledX[13] + b15 * scaledX[14] + b16 * scaledX[15] + b17 * scaledX[16]
+    + b18 * scaledX[17] + b19 * scaledX[18] + b20 * scaledX[19];
 
     const p = 1 / (1 + Math.exp(-linearPredictor));
   
