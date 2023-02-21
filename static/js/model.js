@@ -1,3 +1,5 @@
+import { logic } from './logic.js';
+
 function predictProbabilityOfOffer() {
     const outputs = logic.outputs; // need help referencing logic.js in order to pull outputs array
 
