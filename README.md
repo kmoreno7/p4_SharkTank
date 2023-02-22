@@ -1,1 +1,1 @@
-# Do We Have a Deal? Predicting the Outcome of Shark Tank Pitches Using Machine Learning 
+# Do We Have a Deal? Can You Predict If A Company/Product Pitch Would Succeed in Shark Tank?  
