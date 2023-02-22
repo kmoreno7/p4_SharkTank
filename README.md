@@ -1,7 +1,7 @@
 # Do We Have a Deal? Can You Predict If A Company/Product Pitch Would Succeed in Shark Tank?  
 With this project, our group was interested in looking into predicting the outcome of a pitch made on the popular TV show Shark Tank. After doing an initial search, we found an Excel spreadsheet with data from seasons 1-10 to run a machine learning analysis on.
 
-##Visualization
+## Visualization
 We created an interactive webpage using HTML and Javascript, where a usere can filter by different pitch requirements. Once the pitch requirements are met and the page returns a probabilty of the likelihood an offer would be made. 
 
 ## What is the probability that you could strike a deal with a Shark?
@@ -30,4 +30,5 @@ Our data contains the follwing the information:
 - Entrepreneur Gender (Male, Female, Mixed)
 
 ## ETL
-There was a lot of data for Sharktank India on kaggle but not much for the US Version. Thus we ended up using 
+
+There was a lot of data for Sharktank India on kaggle but not much for the US Version. Thus, we decieded to us another source for our csv. After research we stumbled across many articles that cited halleteco as their source for Shark Tank. Essentially this is a spread sheet where halleteco captured 10 seasons worth of data for Shark Tank [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Lr0gi_QJB_JU0lBMjJ7WiBRxA0loml1FlM-KlmKsaEY/edit#gid=0).
