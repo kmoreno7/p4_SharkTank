@@ -46,6 +46,8 @@ The jupyter notebook file used for cleaning the data can be found [here](https:/
 
 The train-test split is used to evaluate the performance of a machine learning algorithm, and it is typically used for classification or regression problems. In our case it was for the regression. Testing and training splits the data into two subsets. The first is used to fit the model, and it is referred to as training. Our training data was the 'Deal_Yes' column. The second portion is applied to the machine learning model and used to make predictions and compared to the expected value. In which case were the columns "ASK_Amount",	"ASK_Equity" "ASK_Valuation" and all the industry columns. We use sklearn to assign training and testing values to our X and Y variables, therefore, splitting them. The test size will contain 25% of the values while the train size will contain 75% as per the default parameters.
 
+![p4](https://github.com/kmoreno7/p4_SharkTank/blob/main/images/Screenshot%202023-02-22%20at%205.46.40%20PM.png)
+
 The jupyter notebook file used for machine learning can be found [here](https://github.com/kmoreno7/p4_SharkTank/blob/main/sharktank_machine_learning.ipynb).
 
 ## Deploying to webpage.
