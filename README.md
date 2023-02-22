@@ -5,7 +5,7 @@ With this project, our group was interested in looking into predicting the outco
 We created an interactive webpage using HTML and Javascript, where a usere can filter by different pitch requirements. Once the pitch requirements are met and the page returns a probabilty of the likelihood an offer would be made. 
 
 ## What is the probability that you could strike a deal with a Shark?
-Our initial question was can you
+Our initial question was can you predict the probability of striking a deal with a shark based on certain criteria? 
 
 ## Technology & Methodology
 - Google Colab 
@@ -13,7 +13,7 @@ Our initial question was can you
 - JavaScript
 - CSS
 
-##Flow Chart
+## Flow Chart
 
 ![ETL-Project (1)](https://github.com/kmoreno7/p4_SharkTank/blob/main/images/p4_etl.png)
 
@@ -28,3 +28,6 @@ Our data contains the follwing the information:
 - If A Deal Was Made 
 - Industry
 - Entrepreneur Gender (Male, Female, Mixed)
+
+## ETL
+There was a lot of data for Sharktank India on kaggle but not much for the US Version. Thus we ended up using 
