@@ -46,5 +46,10 @@ The jupyter notebook file used for cleaning the data can be found [here](https:/
 
 The train-test split is used to evaluate the performance of a machine learning algorithm, and it is typically used for classification or regression problems. In our case it was for the regression. Testing and training splits the data into two subsets. The first is used to fit the model, and it is referred to as training. Our training data was the 'Deal_Yes' column. The second portion is applied to the machine learning model and used to make predictions and compared to the expected value. In which case were the columns "ASK_Amount",	"ASK_Equity" "ASK_Valuation" and all the industry columns. We use sklearn to assign training and testing values to our X and Y variables, therefore, splitting them. The test size will contain 25% of the values while the train size will contain 75% as per the default parameters.
 
+The jupyter notebook file used for machine learning can be found [here](https://github.com/kmoreno7/p4_SharkTank/blob/main/sharktank_machine_learning.ipynb).
+
 ## Deploying to webpage.
-Our hope was to host the model on a cloud server with
+
+we created a webpage that has five drop downs. These drop downs allow the user to select inputs for five categories that affect likilhood of a deal. Once all five categories have been selected the user can hit the submit button that. The webpage return a likihood of getting a deal in the form of a decimal. Below that are a few charts with additional information about Shark Tank stats. For example, the industry that gets the most deals is Health / Wellness, while Business Services get the least. Moreover when looking at gender, women tend to get the most deals made. 
+
+The code for the webpage is only enough code to make the model run but a more sophisticaed version of this webpage would deploy the model on a cloud server were the inputs could be sent rather than having the model hard coded onto the Javascript file itself. 
