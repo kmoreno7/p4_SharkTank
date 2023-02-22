@@ -37,10 +37,14 @@ There was a lot of data for Shark Tank India on kaggle but not much for the US v
 Our team decided that the best model to use for our desired effect was a logistic regression. A process of modeling the probability of a discrete outcome given an input variable. In other words given a series of inputs what is the likelihood of an event occuring. 
 
 ### Data Preprocessing
-The first step was to create a dataframe that only had the columns we were tested for (Columns mentioned in "Data" section of this readme). Then we dropped all the rows that had no data for Ask Amount as the purpose of going on shark tank is to secure an investment. Thus no ask amount means not investment. All data was then converted to numberic as one cannot pass a string through a logistic regression. On the same note logistic regression can not use categorical data, so columns "Deal", "Industry", and "Entrepreneur Gender" were all turned into indicator variables using .getdummies in pandas. 
+The first step was to create a dataframe that only had the columns we were tested for (Columns mentioned in "Data" section of this readme). Then we dropped all the rows that had no data for Ask Amount as the purpose of going on shark tank is to secure an investment. Thus no ask amount means not investment. All data was then converted to numberic as one cannot pass a string through a logistic regression. On the same note logistic regression can not use categorical data, so columns "Deal", "Industry", and "Entrepreneur Gender" were all turned into indicator variables using .get_dummies in pandas. 
+
+The jupyter notebook file used for cleaning the data can be found [here](https://github.com/kmoreno7/p4_SharkTank/blob/main/data/Cleaning_SharkTank_Data.ipynb).
 
 ### How is Data Split Between Training and Testing Groups
-The train-test split is used to evaluate the performance of a machine learning algorithm, and it is typically used for classification or regression problems Testing and training splits the data into two subsets. The first is used to fit the model, and it is referred to as training. The second portion is applied to the machine learning model and used to make predictions and compared to the expected value. We use sklearn to assign training and testing values to our X and Y variables, therefore, splitting them. The test size will contain 25% of the values while the train size will contain 75% as per the default parameters.
+
+
+The train-test split is used to evaluate the performance of a machine learning algorithm, and it is typically used for classification or regression problems. In our case it was for the regression. Testing and training splits the data into two subsets. The first is used to fit the model, and it is referred to as training. Our training data was the 'Deal_Yes' column. The second portion is applied to the machine learning model and used to make predictions and compared to the expected value. In which case were the columns "ASK_Amount",	"ASK_Equity" "ASK_Valuation" and all the industry columns. We use sklearn to assign training and testing values to our X and Y variables, therefore, splitting them. The test size will contain 25% of the values while the train size will contain 75% as per the default parameters.
 
 ## Deploying to webpage.
 Our hope was to host the model on a cloud server with
