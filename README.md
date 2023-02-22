@@ -18,7 +18,7 @@ Our initial question was can you predict the probability of striking a deal with
 ![ETL-Project (1)](https://github.com/kmoreno7/p4_SharkTank/blob/main/images/p4_etl.png)
 
 ## Data
-Source: Kaggle 
+Source: helleteco
 
 Our data contains the follwing the information: 
 - Company Name
