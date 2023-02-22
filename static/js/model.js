@@ -1,10 +1,4 @@
-import { logic } from './logic.js';
-
-function predictProbabilityOfOffer() {
-    const outputs = logic.outputs; // need help referencing logic.js in order to pull outputs array
-
-    console.log(outputs);
-
+function predictProbabilityOfOffer(outputs) {
     x0 = outputs[2];
     x1 = outputs[3];
     x2 = outputs[4];
@@ -43,7 +37,7 @@ function predictProbabilityOfOffer() {
       x17 = 1;
     } else if (outputs[0] === 'Male') {
       x18 = 1;
-    } else if (outputs[0] === "Mixed Team")
+    } else if (outputs[0] === 'Mixed Team')
       x19 = 1;
     };
 
