@@ -156,15 +156,13 @@ let data = d3.csv('data/sharktank_data.csv').then(function(data) {
     output3 = Number(output3.replace(/[$,]/g, ""));
     outputs.push(output3);
     let output4 = document.getElementById('dropdown4').value;
-    output4 = parseInt(output4).toFixed(3) / 100; // can't get the values to show three decimals in the console
+    output4 = parseInt(output4).toFixed(3) / 100;
     outputs.push(output4);
     let output5 = document.getElementById('dropdown5').value;
     output5 = Number(output5.replace(/[$,]/g, ""));
     outputs.push(output5);
   
     console.log(outputs);
-  
-    x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
   
     x0 = outputs[2];
     x1 = outputs[3];
