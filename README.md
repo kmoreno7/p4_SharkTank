@@ -57,6 +57,6 @@ The jupyter notebook file used for machine learning can be found [here](https://
 
 ## Deploying to webpage.
 
-we created a webpage that has five drop downs. These drop downs allow the user to select inputs for five categories that affect likilhood of a deal. Once all five categories have been selected, the user can hit the submit button. The webpage returns a likihood of getting a deal in the form of a decimal. Below that are a few charts with additional information about Shark Tank stats. For example, the industry that gets the most deals is Health / Wellness, while Business Services get the least. Moreover when looking at gender, women tend to get the most deals made. 
+We created a webpage that has five drop downs. These drop downs allow the user to select inputs for five categories that affect likilhood of a deal. Once all five categories have been selected, the user can hit the submit button. The webpage returns a likihood of getting a deal in the form of a decimal. Below that are a few charts with additional information about Shark Tank stats. For example, the industry that gets the most deals is Health / Wellness, while Business Services get the least. Moreover when looking at gender, women tend to get the most deals made. 
 
 The code for the webpage is only enough code to make the model run but a more sophisticaed version of this webpage would deploy the model on a cloud server where the inputs could be sent rather than having the model hard coded onto the Javascript file itself. 
