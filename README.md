@@ -4,6 +4,8 @@ With this project, our group was interested in looking into predicting the outco
 ## Visualization
 We created an interactive webpage using HTML and Javascript, where a usere can filter by different pitch requirements. Once the pitch requirements are met and the page returns a probabilty of the likelihood an offer would be made. 
 
+Github pages [here](https://kmoreno7.github.io/p4_SharkTank/)
+
 ## What is the probability that you could strike a deal with a Shark?
 Our initial question was can you predict the probability of striking a deal with a shark based on certain criteria? 
 
