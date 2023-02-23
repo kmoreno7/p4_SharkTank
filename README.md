@@ -2,7 +2,7 @@
 
 Shark Tank is a popular reality television show that has been on the air since 2009. Entrepreneurs are given the opportunity to pitch a group of potential investors ("Sharks)" on their business or product. The Sharks, five famous businessmen and women, either pass on the oppportunity ("I'm out") or try to negotiate more favorable terms in an equity deal. Sometimes none of the Sharks bite, other times they bid against each other for the chance to invest in a promising company. Some of the products featured on the show have gone on to be tremendously successful.
 
-With this project, our group was interested in looking into predicting the outcome of a business pitch. After doing an initial search, we found an Excel spreadsheet with data from seasons 1-10 to run a machine learning analysis on.
+With this project, our group was interested in looking into predicting the outcome of a business pitch. After doing an initial search, we found an Excel spreadsheet with data from Shark Tank seasons 1-10 to run a machine learning analysis on.
 
 ## Visualization
 We created an interactive webpage using HTML and Javascript, where a user can filter by different pitch requirements. Once the pitch requirements are met, the page returns a probabilty of the likelihood an offer would be made. 
@@ -10,7 +10,7 @@ We created an interactive webpage using HTML and Javascript, where a user can fi
 Github pages [here](https://kmoreno7.github.io/p4_SharkTank/)
 
 ## What is the probability that you could strike a deal with a Shark?
-Our initial question was can you predict the probability of striking a deal with a shark based on certain criteria? 
+Our initial question was: Can you predict the probability of striking a deal with a shark based on certain criteria? 
 
 ## Technology & Methodology
 - Google Colab 
@@ -25,7 +25,7 @@ Our initial question was can you predict the probability of striking a deal with
 ## Data
 Source: halleteco
 
-Our data contains the follwing the information: 
+Our data contains the following information: 
 - Company Name
 - Ask Amount
 - Requested Equity 
@@ -36,13 +36,13 @@ Our data contains the follwing the information:
 
 ## ETL
 
-There was a lot of data for Shark Tank India on kaggle but not much for the US version. Thus, we decieded to us another source for our CSV. After some research, we stumbled across many articles that cited halleteco as their source for Shark Tank data. Essentially this is a [spread sheet](https://docs.google.com/spreadsheets/d/1Lr0gi_QJB_JU0lBMjJ7WiBRxA0loml1FlM-KlmKsaEY/edit#gid=0) where halleteco captured 10 seasons worth of data for Shark Tank . By Far the largest and most complete dataset that we could find.
+There was a lot of data for Shark Tank India on kaggle but not much for the US version. Thus, we decieded to use another source for our CSV. After some research, we stumbled across many articles that cited halleteco as their source for Shark Tank data. Essentially this is a [spread sheet](https://docs.google.com/spreadsheets/d/1Lr0gi_QJB_JU0lBMjJ7WiBRxA0loml1FlM-KlmKsaEY/edit#gid=0) where halleteco captured 10 seasons worth of data for Shark Tank . By far the largest, most complete dataset that we could find.
 
 ## Machine Learning
-Our team decided that the best model to use for our desired effect was a logistic regression. A process of modeling the probability of a discrete outcome given an input variable. In other words given a series of inputs what is the likelihood of an event occuring. 
+Our team decided that the best model to use for our desired effect was a logistic regression. A process of modeling the probability of a discrete outcome given an input variable. In other words: Given a series of inputs, what is the likelihood of an event occuring?
 
 ### Data Preprocessing
-The first step was to create a dataframe that only had the columns we were tested for (Columns mentioned in "Data" section of this readme). Then we dropped all the rows that had no data for Ask Amount as the purpose of going on shark tank is to secure an investment. Thus no ask amount means not investment. All data was then converted to numberic as one cannot pass a string through a logistic regression. On the same note logistic regression can not use categorical data, so columns "Deal", "Industry", and "Entrepreneur Gender" were all turned into indicator variables using .get_dummies in pandas. 
+The first step was to create a dataframe that only had the columns we tested for (Columns mentioned in "Data" section of this readme). Then we dropped all the rows that had no data for Ask Amount as the purpose of going on shark tank is to secure an investment. Thus no ask amount means not investment. All data was then converted to numberic as one cannot pass a string through a logistic regression. On the same note logistic regression can not use categorical data, so columns "Deal", "Industry", and "Entrepreneur Gender" were all turned into indicator variables using .get_dummies in pandas. 
 
 The jupyter notebook file used for cleaning the data can be found [here](https://github.com/kmoreno7/p4_SharkTank/blob/main/data/Cleaning_SharkTank_Data.ipynb).
 
