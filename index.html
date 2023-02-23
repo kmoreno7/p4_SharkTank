@@ -10,28 +10,28 @@
         <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
     </head>
 
-    <body style="background-color:rgb(33, 33, 110)">
-        <h1 style="color:rgb(177, 177, 164)">Shark Tank Deal Predictor</h1>
-        <h3 style="color:rgb(177, 177, 164)">Create a team, business and details of a pitch to find your chance of securing a deal on Shark Tank.</h3>
+    <body style="background-color:rgb(114, 114, 172)">
+        <h1 style="color:black">Shark Tank Deal Predictor</h1>
+        <h3 style="color:black">Create a team, business and details of a pitch to find your chance of securing a deal on Shark Tank.</h3>
         <hr>
         <form id="dropdownChoices">
-            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Gender of Pitch Team:</h4>
+            <h4 style="color:black; margin-top: 25px; margin-bottom: 5px;">Gender of Pitch Team:</h4>
             <select id="dropdown1">
             </select>
 
-            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Industry:</h4>
+            <h4 style="color:black; margin-top: 25px; margin-bottom: 5px;">Industry:</h4>
             <select id="dropdown2">
             </select>
 
-            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Asking Amount:</h4>
+            <h4 style="color:black; margin-top: 25px; margin-bottom: 5px;">Initial Asking Amount:</h4>
             <select id="dropdown3">
             </select>
 
-            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Equity Offered:</h4>
+            <h4 style="color:black; margin-top: 25px; margin-bottom: 5px;">Initial Equity Offered:</h4>
             <select id="dropdown4">
             </select>
 
-            <h4 style="color:rgb(177, 177, 164); margin-top: 25px; margin-bottom: 5px;">Initial Valuation:</h4>
+            <h4 style="color:black; margin-top: 25px; margin-bottom: 5px;">Initial Valuation:</h4>
             <select id="dropdown5">
             </select>
             
@@ -40,9 +40,15 @@
             <input type="submit" style="margin-bottom: 50px;"></input>
         </form>
 
-        <h4 id="prediction" style="color:rgb(177, 177, 164)">Prediction here:</h4>
+        <h4 id="prediction" style="color:black; margin-bottom: 100px;">Prediction here:</h4>
 
-        <h4 style="color:rgb(177, 177, 164)">Any useful visualizations</h4>
+        <h4 style="color:black">Visualizations:</h4>
+
+        <img src="images/Deal_By_Gender.png" alt="Bar chart of successful deals by gender" width="500" height="300">
+
+        <img src="images/Industry_Deals.png" alt="Bar chart of successful deals by industry" width="500" height="300">
+
+        <img src="images/Industry_No_deals.png" alt="Bar chart of unsuccesful deals by industry" width="500" height="300">
 
         <!-- <script type="text/javascript" src="static/js/model.js"></script> -->
         <script type="text/javascript" src="static/js/logic.js"></script>
