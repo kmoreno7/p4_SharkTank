@@ -1,5 +1,8 @@
 # Do We Have a Deal? Can You Predict If A Company/Product Pitch Would Succeed in Shark Tank?  
-With this project, our group was interested in looking into predicting the outcome of a pitch made on the popular TV show Shark Tank. After doing an initial search, we found an Excel spreadsheet with data from seasons 1-10 to run a machine learning analysis on.
+
+Shark Tank is a popular reality television show that has been on the air since 2009. Entrepreneurs are given the opportunity to pitch a group of potential investors ("Sharks)" on their business or product. The Sharks, five famous businessmen and women, either pass on the oppportunity ("I'm out") or try to negotiate more favorable terms in an equity deal. Sometimes none of the Sharks bite, other times they bid against each other for the chance to invest in a promising company. Some of the products featured on the show have gone on to be tremendously successful.
+
+With this project, our group was interested in looking into predicting the outcome of a business pitch. After doing an initial search, we found an Excel spreadsheet with data from seasons 1-10 to run a machine learning analysis on.
 
 ## Visualization
 We created an interactive webpage using HTML and Javascript, where a user can filter by different pitch requirements. Once the pitch requirements are met, the page returns a probabilty of the likelihood an offer would be made. 
