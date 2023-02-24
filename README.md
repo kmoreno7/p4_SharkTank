@@ -44,6 +44,8 @@ Our team decided that the best model to use for our desired effect was a logisti
 ### Data Preprocessing
 The first step was to create a dataframe that only had the columns we tested for (Columns mentioned in "Data" section of this readme). Then we dropped all the rows that had no data for Ask Amount as the purpose of going on Shark Tank is to secure an investment. Thus, no ask amount means no investment. All data was then converted to numeric as one cannot pass a string through a logistic regression. On the same note logistic regression can not use categorical data, so columns "Deal", "Industry", and "Entrepreneur Gender" were all turned into indicator variables using .get_dummies in pandas. 
 
+![p4](https://github.com/kmoreno7/p4_SharkTank/blob/main/images/Data_table.png)
+
 The jupyter notebook file used for cleaning the data can be found [here](https://github.com/kmoreno7/p4_SharkTank/blob/main/data/Cleaning_SharkTank_Data.ipynb).
 
 ### How is Data Split Between Training and Testing Groups
